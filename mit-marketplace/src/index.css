@@ -1,0 +1,231 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 0 168 232;
+    --color-secondary: 0 52 89;
+    --color-accent: 255 107 107;
+    --color-background: 248 249 250;
+    --color-text: 51 51 51;
+  }
+}
+
+@layer components {
+  .bg-primary {
+    @apply bg-[rgb(var(--color-primary))];
+  }
+  .bg-secondary {
+    @apply bg-[rgb(var(--color-secondary))];
+  }
+  .bg-accent {
+    @apply bg-[rgb(var(--color-accent))];
+  }
+  .text-primary {
+    @apply text-[rgb(var(--color-primary))];
+  }
+  .text-secondary {
+    @apply text-[rgb(var(--color-secondary))];
+  }
+  .text-accent {
+    @apply text-[rgb(var(--color-accent))];
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-text));
+}
+
+.btn {
+  @apply font-bold py-2 px-4 rounded transition duration-300 ease-in-out;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.btn-secondary {
+  @apply bg-gray-500 text-white hover:bg-gray-600;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105;
+}
+
+.input {
+  @apply w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section {
+  @apply py-12;
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  @apply text-secondary;
+}
+
+/* Header styles */
+.header {
+  @apply bg-white shadow-md sticky top-0 z-50;
+}
+
+.header-container {
+  @apply flex justify-between items-center py-4;
+}
+
+.header-nav {
+  @apply hidden md:flex space-x-6 items-center;
+}
+
+.header-link {
+  @apply text-gray-600 hover:text-blue-600 transition duration-300 ease-in-out text-lg;
+}
+
+/* Footer styles */
+.footer {
+  @apply bg-secondary text-white;
+}
+
+.footer-container {
+  @apply py-12;
+}
+
+.footer-title {
+  @apply text-xl font-bold mb-4;
+}
+
+.footer-link {
+  @apply text-gray-300 hover:text-white transition duration-300 ease-in-out;
+}
+
+/* Product card styles */
+.product-card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl;
+}
+
+.product-image {
+  @apply w-full h-48 object-cover transition-transform duration-300 hover:scale-105;
+}
+
+.product-info {
+  @apply p-4;
+}
+
+.product-title {
+  @apply text-xl font-semibold mb-2 text-secondary;
+}
+
+.product-description {
+  @apply text-gray-600 mb-4;
+}
+
+.product-price {
+  @apply text-2xl font-bold text-primary mb-4;
+}
+
+/* Form styles */
+.form-group {
+  @apply mb-4;
+}
+
+.form-submit {
+  @apply mt-6;
+}
+
+/* Cart styles */
+.cart-item {
+  @apply flex items-center justify-between bg-white p-4 rounded-md shadow mb-4;
+}
+
+.cart-item-info {
+  @apply flex items-center;
+}
+
+.cart-item-image {
+  @apply w-20 h-20 object-cover rounded-md mr-4;
+}
+
+.cart-item-details {
+  @apply flex-grow;
+}
+
+.cart-item-actions {
+  @apply flex items-center space-x-2;
+}
+
+.cart-quantity-btn {
+  @apply px-2 py-1 bg-gray-200 rounded hover:bg-gray-300 transition-colors duration-300;
+}
+
+.cart-remove-btn {
+  @apply ml-4 text-red-600 hover:text-red-800 transition-colors duration-300;
+}
+
+/* Home page styles */
+.hero-section {
+  @apply bg-gradient-to-r from-blue-600 to-blue-400 text-white py-20 px-4 rounded-lg shadow-lg mb-12;
+}
+
+.hero-title {
+  @apply text-4xl md:text-5xl font-bold mb-4 leading-tight;
+}
+
+.hero-subtitle {
+  @apply text-xl md:text-2xl mb-8;
+}
+
+.feature-card {
+  @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+}
+
+.feature-icon {
+  @apply text-4xl mb-4 text-primary;
+}
+
+/* Authentication styles */
+.auth-form {
+  @apply max-w-md mx-auto bg-white p-8 rounded-lg shadow-md;
+}
+
+.auth-title {
+  @apply text-2xl font-bold mb-6 text-center text-secondary;
+}
+
+.auth-input {
+  @apply w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4;
+}
+
+.auth-submit {
+  @apply w-full bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header-nav {
+    @apply flex-col mt-4;
+  }
+
+  .header-link {
+    @apply block py-2;
+  }
+}
+
